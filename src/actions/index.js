@@ -8,7 +8,7 @@ const API_KEY = '?key=dios';
 
 export function fetchPosts() {
     
-    const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
+    const request = axios.get(`${ROOT_URL}/posts${API_KEY}`); 
 
     return {
         type: FETCH_POST,
