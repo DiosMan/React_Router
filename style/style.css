@@ -1,3 +1,7 @@
 form a{
     margin-left: 10px;
 }
+
+li .pull-right{
+    float: right;
+}

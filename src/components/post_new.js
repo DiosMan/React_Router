@@ -4,11 +4,29 @@ import { createPost } from '../actions/index';
 import { Link } from 'react-router';
 
 class PostNew extends Component {
+    
+    static contextTypes ={
+        router: React.PropTypes.object //router: PropTypes.object would not work; Need React.
+    };
+    
+    onSubmit (props) {
+        this.props.createPost(props)
+        .then(
+            () => {
+                //blog has been created, navigate the user to the index
+                //nevigate by calling this.context.router.path with the 
+                //new path to nevigate to
+                this.context.router.push('/');
+            }
+        );
+    }
+    
     render () {
 
-        const { fields: {title, categories,content,haha}, handleSubmit } = this.props;
+        const { fields: {title, categories,content}, handleSubmit } = this.props;
         return (
-            <form onSubmit={ handleSubmit(this.props.createPost) }>
+            // this.onSubmit.bind(this) : the onSubmit function's 'this' means the 'this' of the component
+            <form onSubmit={ handleSubmit(this.onSubmit.bind(this)) }> 
                 <h3>Create A New Post</h3>
                 <div className = {`form-group ${title.touched && title.invalid ? 'has-danger' : '' }`}>
                     <lable>Title</lable>
