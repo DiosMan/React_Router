@@ -1,11 +1,12 @@
 import React, { Component } from  'react';
 import { reduxForm } from 'redux-form';
 import { createPost } from '../actions/index';
+import { Link } from 'react-router';
 
 class PostNew extends Component {
     render () {
 
-        const { fields: {title, categories,content}, handleSubmit } = this.props;
+        const { fields: {title, categories,content,haha}, handleSubmit } = this.props;
         return (
             <form onSubmit={ handleSubmit(this.props.createPost) }>
                 <h3>Create A New Post</h3>
@@ -27,8 +28,9 @@ class PostNew extends Component {
                     <div className="text-help">{content.touched ? content.error : ''}</div>
                 </div>
 
-
+                
                 <button type="submit" className="btn btn-primary">Submit</button>
+                <Link to="/" className="btn btn-danger">Cancel</Link>
             </form>
 
         );
