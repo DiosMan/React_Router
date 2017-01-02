@@ -5,3 +5,12 @@ form a{
 li .pull-right{
     float: right;
 }
+
+.pull-right{
+    float:right;
+}
+
+.btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
