@@ -1,5 +1,6 @@
 # React Blog
 
-Using ReduxSimpleStarter by Stephen Grider
+
+The app was built using ReduxSimpleStarter by Stephen Grider
 https://github.com/stephengrider
 
